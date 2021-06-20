@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(75, 105, 124);
+}
+body::before
+{
+    position: absolute;
+    content: '';
+    top: 30px;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+    background: darkcyan;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px);
+}
+body::after
+{
+    position: absolute;
+    content: '';
+    bottom: 80px;
+    right: 150px;
+    width: 270px;
+    height: 270px;
+    background: rgb(139, 0, 127);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px);
+}
+.container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    transform-style: preserve-3d;
+}
+.container .box
+{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(180, 180, 180, 0.199);
+    border-radius: 10px;
+    margin: 20px;
+    backdrop-filter: blur(50px);
+    box-shadow: 10px 10px 20px rgba(17, 17, 17, 0.075);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transform-style: preserve-3d;
+}
+.container .box::before
+{
+    content: 'Nike';
+    position: absolute;
+    top: 10px;
+    font-weight: 900;
+    font-size: 6em;
+    font-style: italic;
+    opacity: 0;
+    transition: .5s;
+    transition: .5s ease-in-out;
+}
+.container .box::after
+{
+    content: 'Shoes';
+    position: absolute;
+    bottom: 40px;
+    font-weight: 900;
+    font-size: 5em;
+    font-style: italic;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    z-index: -1;
+}
+.container .box:hover::before,
+.container .box:hover::after
+{
+    opacity: .3;
+}
+.container .box:hover
+{
+    transform: translate3d(0px, 0px, 40px );
+}
+.container .box .name
+{
+    position: absolute;
+    top: 0;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transform: translate3d(0,0,75px);
+    opacity: 0;
+    transition: .5s;
+    text-transform: capitalize;
+}
+.container .box:hover .name
+{
+    opacity: 1;
+    top: 30px;
+}
+.container .box .buy
+{
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    color: rgba(17, 17, 17, 0.425);
+    font-size: 1.2em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    padding: 5px 25px;
+    background: #fdfdfd;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: .5s;
+}
+.container .box:hover .buy
+{
+    opacity: 1;
+    transform: translate3d(0px, -30px, 40px);
+}
+.container .box .circle
+{
+    position: absolute;
+    background: rgb(6, 188, 201);
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: .5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,75px);
+}
+.container .box:nth-child(2) .circle
+{
+    background: rgb(224, 0, 67);
+}
+.container .box:nth-child(3) .circle
+{
+    background: rgb(81, 172, 6);
+}
+.container .box .product
+{
+    width: 300px;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: translate3d(0px, 0px, 300px) rotate(20deg);
+}
